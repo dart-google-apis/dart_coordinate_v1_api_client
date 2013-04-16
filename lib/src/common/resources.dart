@@ -12,13 +12,13 @@ class CustomFieldDefResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CustomFieldDefListResponse> list(String teamId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CustomFieldDefListResponse> list(core.String teamId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/custom_fields";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (teamId == null) paramErrors.add("teamId is required");
     if (teamId != null) urlParams["teamId"] = teamId;
     if (optParams != null) {
@@ -57,13 +57,13 @@ class JobsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Job> get(String teamId, String jobId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Job> get(core.String teamId, core.String jobId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (jobId == null) paramErrors.add("jobId is required");
     if (jobId != null) urlParams["jobId"] = jobId;
     if (teamId == null) paramErrors.add("teamId is required");
@@ -116,13 +116,13 @@ class JobsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Job> insert(Job request, String teamId, String address, num lat, num lng, String title, {String assignee, String customField, String customerName, String customerPhoneNumber, String note, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Job> insert(Job request, core.String teamId, core.String address, core.num lat, core.num lng, core.String title, {core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.String note, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (address == null) paramErrors.add("address is required");
     if (address != null) queryParams["address"] = address;
     if (assignee != null) queryParams["assignee"] = assignee;
@@ -172,13 +172,13 @@ class JobsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<JobListResponse> list(String teamId, {int maxResults, String minModifiedTimestampMs, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<JobListResponse> list(core.String teamId, {core.int maxResults, core.String minModifiedTimestampMs, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (minModifiedTimestampMs != null) queryParams["minModifiedTimestampMs"] = minModifiedTimestampMs;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
@@ -242,13 +242,13 @@ class JobsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Job> patch(Job request, String teamId, String jobId, {String address, String assignee, String customField, String customerName, String customerPhoneNumber, num lat, num lng, String note, String progress, String title, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Job> patch(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (address != null) queryParams["address"] = address;
     if (assignee != null) queryParams["assignee"] = assignee;
     if (customField != null) queryParams["customField"] = customField;
@@ -324,13 +324,13 @@ class JobsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Job> update(Job request, String teamId, String jobId, {String address, String assignee, String customField, String customerName, String customerPhoneNumber, num lat, num lng, String note, String progress, String title, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Job> update(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (address != null) queryParams["address"] = address;
     if (assignee != null) queryParams["assignee"] = assignee;
     if (customField != null) queryParams["customField"] = customField;
@@ -390,13 +390,13 @@ class LocationResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<LocationListResponse> list(String teamId, String workerEmail, String startTimestampMs, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<LocationListResponse> list(core.String teamId, core.String workerEmail, core.String startTimestampMs, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/workers/{workerEmail}/locations";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (startTimestampMs == null) paramErrors.add("startTimestampMs is required");
@@ -441,13 +441,13 @@ class ScheduleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Schedule> get(String teamId, String jobId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Schedule> get(core.String teamId, core.String jobId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}/schedule";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (jobId == null) paramErrors.add("jobId is required");
     if (jobId != null) urlParams["jobId"] = jobId;
     if (teamId == null) paramErrors.add("teamId is required");
@@ -490,13 +490,13 @@ class ScheduleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Schedule> patch(Schedule request, String teamId, String jobId, {bool allDay, String endTime, String startTime, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Schedule> patch(Schedule request, core.String teamId, core.String jobId, {core.bool allDay, core.String endTime, core.String startTime, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}/schedule";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (allDay != null) queryParams["allDay"] = allDay;
     if (endTime != null) queryParams["endTime"] = endTime;
     if (jobId == null) paramErrors.add("jobId is required");
@@ -542,13 +542,13 @@ class ScheduleResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Schedule> update(Schedule request, String teamId, String jobId, {bool allDay, String endTime, String startTime, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Schedule> update(Schedule request, core.String teamId, core.String jobId, {core.bool allDay, core.String endTime, core.String startTime, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}/schedule";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (allDay != null) queryParams["allDay"] = allDay;
     if (endTime != null) queryParams["endTime"] = endTime;
     if (jobId == null) paramErrors.add("jobId is required");
@@ -590,13 +590,13 @@ class WorkerResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<WorkerListResponse> list(String teamId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<WorkerListResponse> list(core.String teamId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{teamId}/workers";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (teamId == null) paramErrors.add("teamId is required");
     if (teamId != null) urlParams["teamId"] = teamId;
     if (optParams != null) {

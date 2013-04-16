@@ -4,16 +4,16 @@ part of coordinate_v1_api_client;
 class CustomField {
 
   /** Custom field id. */
-  String customFieldId;
+  core.String customFieldId;
 
   /** Identifies this object as a custom field. */
-  String kind;
+  core.String kind;
 
   /** Custom field value. */
-  String value;
+  core.String value;
 
   /** Create new CustomField from JSON data */
-  CustomField.fromJson(Map json) {
+  CustomField.fromJson(core.Map json) {
     if (json.containsKey("customFieldId")) {
       customFieldId = json["customFieldId"];
     }
@@ -26,8 +26,8 @@ class CustomField {
   }
 
   /** Create JSON Object for CustomField */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (customFieldId != null) {
       output["customFieldId"] = customFieldId;
@@ -43,7 +43,7 @@ class CustomField {
   }
 
   /** Return String representation of CustomField */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -51,25 +51,25 @@ class CustomField {
 class CustomFieldDef {
 
   /** Whether the field is enabled. */
-  bool enabled;
+  core.bool enabled;
 
   /** Custom field id. */
-  String id;
+  core.String id;
 
   /** Identifies this object as a custom field definition. */
-  String kind;
+  core.String kind;
 
   /** Custom field name. */
-  String name;
+  core.String name;
 
   /** Whether the field is required for checkout. */
-  bool requiredForCheckout;
+  core.bool requiredForCheckout;
 
   /** Custom field type. */
-  String type;
+  core.String type;
 
   /** Create new CustomFieldDef from JSON data */
-  CustomFieldDef.fromJson(Map json) {
+  CustomFieldDef.fromJson(core.Map json) {
     if (json.containsKey("enabled")) {
       enabled = json["enabled"];
     }
@@ -91,8 +91,8 @@ class CustomFieldDef {
   }
 
   /** Create JSON Object for CustomFieldDef */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (enabled != null) {
       output["enabled"] = enabled;
@@ -117,7 +117,7 @@ class CustomFieldDef {
   }
 
   /** Return String representation of CustomFieldDef */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -125,13 +125,13 @@ class CustomFieldDef {
 class CustomFieldDefListResponse {
 
   /** Collection of custom field definitions in a team. */
-  List<CustomFieldDef> items;
+  core.List<CustomFieldDef> items;
 
   /** Identifies this object as a collection of custom field definitions in a team. */
-  String kind;
+  core.String kind;
 
   /** Create new CustomFieldDefListResponse from JSON data */
-  CustomFieldDefListResponse.fromJson(Map json) {
+  CustomFieldDefListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -144,11 +144,11 @@ class CustomFieldDefListResponse {
   }
 
   /** Create JSON Object for CustomFieldDefListResponse */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -161,7 +161,7 @@ class CustomFieldDefListResponse {
   }
 
   /** Return String representation of CustomFieldDefListResponse */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -169,13 +169,13 @@ class CustomFieldDefListResponse {
 class CustomFields {
 
   /** Collection of custom fields. */
-  List<CustomField> customField;
+  core.List<CustomField> customField;
 
   /** Identifies this object as a collection of custom fields. */
-  String kind;
+  core.String kind;
 
   /** Create new CustomFields from JSON data */
-  CustomFields.fromJson(Map json) {
+  CustomFields.fromJson(core.Map json) {
     if (json.containsKey("customField")) {
       customField = [];
       json["customField"].forEach((item) {
@@ -188,11 +188,11 @@ class CustomFields {
   }
 
   /** Create JSON Object for CustomFields */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (customField != null) {
-      output["customField"] = new List();
+      output["customField"] = new core.List();
       customField.forEach((item) {
         output["customField"].add(item.toJson());
       });
@@ -205,7 +205,7 @@ class CustomFields {
   }
 
   /** Return String representation of CustomFields */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -213,19 +213,19 @@ class CustomFields {
 class Job {
 
   /** Job id. */
-  String id;
+  core.String id;
 
   /** List of job changes since it was created. The first change corresponds to the state of the job when it was created. */
-  List<JobChange> jobChange;
+  core.List<JobChange> jobChange;
 
   /** Identifies this object as a job. */
-  String kind;
+  core.String kind;
 
   /** Current job state. */
   JobState state;
 
   /** Create new Job from JSON data */
-  Job.fromJson(Map json) {
+  Job.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -244,14 +244,14 @@ class Job {
   }
 
   /** Create JSON Object for Job */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (jobChange != null) {
-      output["jobChange"] = new List();
+      output["jobChange"] = new core.List();
       jobChange.forEach((item) {
         output["jobChange"].add(item.toJson());
       });
@@ -267,7 +267,7 @@ class Job {
   }
 
   /** Return String representation of Job */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -275,16 +275,16 @@ class Job {
 class JobChange {
 
   /** Identifies this object as a job change. */
-  String kind;
+  core.String kind;
 
   /** Change applied to the job. Only the fields that were changed are set. */
   JobState state;
 
   /** Time at which this change was applied. */
-  String timestamp;
+  core.String timestamp;
 
   /** Create new JobChange from JSON data */
-  JobChange.fromJson(Map json) {
+  JobChange.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -297,8 +297,8 @@ class JobChange {
   }
 
   /** Create JSON Object for JobChange */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
@@ -314,7 +314,7 @@ class JobChange {
   }
 
   /** Return String representation of JobChange */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -322,16 +322,16 @@ class JobChange {
 class JobListResponse {
 
   /** Jobs in the collection. */
-  List<Job> items;
+  core.List<Job> items;
 
   /** Identifies this object as a list of jobs. */
-  String kind;
+  core.String kind;
 
   /** A token to provide to get the next page of results. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new JobListResponse from JSON data */
-  JobListResponse.fromJson(Map json) {
+  JobListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -347,11 +347,11 @@ class JobListResponse {
   }
 
   /** Create JSON Object for JobListResponse */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -367,7 +367,7 @@ class JobListResponse {
   }
 
   /** Return String representation of JobListResponse */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -375,34 +375,34 @@ class JobListResponse {
 class JobState {
 
   /** Email address of the assignee. */
-  String assignee;
+  core.String assignee;
 
   /** Custom fields. */
   CustomFields customFields;
 
   /** Customer name. */
-  String customerName;
+  core.String customerName;
 
   /** Customer phone number. */
-  String customerPhoneNumber;
+  core.String customerPhoneNumber;
 
   /** Identifies this object as a job state. */
-  String kind;
+  core.String kind;
 
   /** Job location. */
   Location location;
 
   /** Note added to the job. */
-  List<String> note;
+  core.List<core.String> note;
 
   /** Job progress. */
-  String progress;
+  core.String progress;
 
   /** Job title. */
-  String title;
+  core.String title;
 
   /** Create new JobState from JSON data */
-  JobState.fromJson(Map json) {
+  JobState.fromJson(core.Map json) {
     if (json.containsKey("assignee")) {
       assignee = json["assignee"];
     }
@@ -436,8 +436,8 @@ class JobState {
   }
 
   /** Create JSON Object for JobState */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (assignee != null) {
       output["assignee"] = assignee;
@@ -458,7 +458,7 @@ class JobState {
       output["location"] = location.toJson();
     }
     if (note != null) {
-      output["note"] = new List();
+      output["note"] = new core.List();
       note.forEach((item) {
         output["note"].add(item);
       });
@@ -474,7 +474,7 @@ class JobState {
   }
 
   /** Return String representation of JobState */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -482,19 +482,19 @@ class JobState {
 class Location {
 
   /** Address. */
-  List<String> addressLine;
+  core.List<core.String> addressLine;
 
   /** Identifies this object as a location. */
-  String kind;
+  core.String kind;
 
   /** Latitude. */
-  num lat;
+  core.num lat;
 
   /** Longitude. */
-  num lng;
+  core.num lng;
 
   /** Create new Location from JSON data */
-  Location.fromJson(Map json) {
+  Location.fromJson(core.Map json) {
     if (json.containsKey("addressLine")) {
       addressLine = [];
       json["addressLine"].forEach((item) {
@@ -513,11 +513,11 @@ class Location {
   }
 
   /** Create JSON Object for Location */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (addressLine != null) {
-      output["addressLine"] = new List();
+      output["addressLine"] = new core.List();
       addressLine.forEach((item) {
         output["addressLine"].add(item);
       });
@@ -536,7 +536,7 @@ class Location {
   }
 
   /** Return String representation of Location */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -544,22 +544,19 @@ class Location {
 class LocationListResponse {
 
   /** Locations in the collection. */
-  List<LocationRecord> items;
+  core.List<LocationRecord> items;
 
   /** Identifies this object as a list of locations. */
-  String kind;
+  core.String kind;
 
   /** A token to provide to get the next page of results. */
-  String nextPageToken;
-
-  /** General pagination information. */
-  PageInfo pageInfo;
+  core.String nextPageToken;
 
   /** Pagination information for token pagination. */
   TokenPagination tokenPagination;
 
   /** Create new LocationListResponse from JSON data */
-  LocationListResponse.fromJson(Map json) {
+  LocationListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -572,20 +569,17 @@ class LocationListResponse {
     if (json.containsKey("nextPageToken")) {
       nextPageToken = json["nextPageToken"];
     }
-    if (json.containsKey("pageInfo")) {
-      pageInfo = new PageInfo.fromJson(json["pageInfo"]);
-    }
     if (json.containsKey("tokenPagination")) {
       tokenPagination = new TokenPagination.fromJson(json["tokenPagination"]);
     }
   }
 
   /** Create JSON Object for LocationListResponse */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -596,9 +590,6 @@ class LocationListResponse {
     if (nextPageToken != null) {
       output["nextPageToken"] = nextPageToken;
     }
-    if (pageInfo != null) {
-      output["pageInfo"] = pageInfo.toJson();
-    }
     if (tokenPagination != null) {
       output["tokenPagination"] = tokenPagination.toJson();
     }
@@ -607,7 +598,7 @@ class LocationListResponse {
   }
 
   /** Return String representation of LocationListResponse */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -615,22 +606,22 @@ class LocationListResponse {
 class LocationRecord {
 
   /** The collection time in milliseconds since the epoch. */
-  String collectionTime;
+  core.String collectionTime;
 
   /** The location accuracy in meters. This is the radius of a 95% confidence interval around the location measurement. */
-  num confidenceRadius;
+  core.num confidenceRadius;
 
   /** Identifies this object as a location. */
-  String kind;
+  core.String kind;
 
   /** Latitude. */
-  num latitude;
+  core.num latitude;
 
   /** Longitude. */
-  num longitude;
+  core.num longitude;
 
   /** Create new LocationRecord from JSON data */
-  LocationRecord.fromJson(Map json) {
+  LocationRecord.fromJson(core.Map json) {
     if (json.containsKey("collectionTime")) {
       collectionTime = json["collectionTime"];
     }
@@ -649,8 +640,8 @@ class LocationRecord {
   }
 
   /** Create JSON Object for LocationRecord */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (collectionTime != null) {
       output["collectionTime"] = collectionTime;
@@ -672,63 +663,7 @@ class LocationRecord {
   }
 
   /** Return String representation of LocationRecord */
-  String toString() => JSON.stringify(this.toJson());
-
-}
-
-/** Page information. */
-class PageInfo {
-
-  /** Identifies this object as page information. */
-  String kind;
-
-  /** Number of results per page. */
-  int resultPerPage;
-
-  /** Page start index. */
-  int startIndex;
-
-  /** Number of results available. */
-  int totalResults;
-
-  /** Create new PageInfo from JSON data */
-  PageInfo.fromJson(Map json) {
-    if (json.containsKey("kind")) {
-      kind = json["kind"];
-    }
-    if (json.containsKey("resultPerPage")) {
-      resultPerPage = json["resultPerPage"];
-    }
-    if (json.containsKey("startIndex")) {
-      startIndex = json["startIndex"];
-    }
-    if (json.containsKey("totalResults")) {
-      totalResults = json["totalResults"];
-    }
-  }
-
-  /** Create JSON Object for PageInfo */
-  Map toJson() {
-    var output = new Map();
-
-    if (kind != null) {
-      output["kind"] = kind;
-    }
-    if (resultPerPage != null) {
-      output["resultPerPage"] = resultPerPage;
-    }
-    if (startIndex != null) {
-      output["startIndex"] = startIndex;
-    }
-    if (totalResults != null) {
-      output["totalResults"] = totalResults;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of PageInfo */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -736,19 +671,19 @@ class PageInfo {
 class Schedule {
 
   /** Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true. */
-  bool allDay;
+  core.bool allDay;
 
   /** Scheduled end time in milliseconds since epoch. */
-  String endTime;
+  core.String endTime;
 
   /** Identifies this object as a job schedule. */
-  String kind;
+  core.String kind;
 
   /** Scheduled start time in milliseconds since epoch. */
-  String startTime;
+  core.String startTime;
 
   /** Create new Schedule from JSON data */
-  Schedule.fromJson(Map json) {
+  Schedule.fromJson(core.Map json) {
     if (json.containsKey("allDay")) {
       allDay = json["allDay"];
     }
@@ -764,8 +699,8 @@ class Schedule {
   }
 
   /** Create JSON Object for Schedule */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (allDay != null) {
       output["allDay"] = allDay;
@@ -784,7 +719,7 @@ class Schedule {
   }
 
   /** Return String representation of Schedule */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -792,16 +727,16 @@ class Schedule {
 class TokenPagination {
 
   /** Identifies this object as pagination information. */
-  String kind;
+  core.String kind;
 
   /** A token to provide to get the next page of results. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** A token to provide to get the previous page of results. */
-  String previousPageToken;
+  core.String previousPageToken;
 
   /** Create new TokenPagination from JSON data */
-  TokenPagination.fromJson(Map json) {
+  TokenPagination.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -814,8 +749,8 @@ class TokenPagination {
   }
 
   /** Create JSON Object for TokenPagination */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
@@ -831,7 +766,7 @@ class TokenPagination {
   }
 
   /** Return String representation of TokenPagination */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -839,13 +774,13 @@ class TokenPagination {
 class Worker {
 
   /** Worker email address. */
-  String id;
+  core.String id;
 
   /** Identifies this object as a worker. */
-  String kind;
+  core.String kind;
 
   /** Create new Worker from JSON data */
-  Worker.fromJson(Map json) {
+  Worker.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -855,8 +790,8 @@ class Worker {
   }
 
   /** Create JSON Object for Worker */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
@@ -869,7 +804,7 @@ class Worker {
   }
 
   /** Return String representation of Worker */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -877,13 +812,13 @@ class Worker {
 class WorkerListResponse {
 
   /** Workers in the collection. */
-  List<Worker> items;
+  core.List<Worker> items;
 
   /** Identifies this object as a list of workers. */
-  String kind;
+  core.String kind;
 
   /** Create new WorkerListResponse from JSON data */
-  WorkerListResponse.fromJson(Map json) {
+  WorkerListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -896,11 +831,11 @@ class WorkerListResponse {
   }
 
   /** Create JSON Object for WorkerListResponse */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -913,7 +848,7 @@ class WorkerListResponse {
   }
 
   /** Return String representation of WorkerListResponse */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
