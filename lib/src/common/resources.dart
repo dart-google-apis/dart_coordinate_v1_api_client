@@ -1,8 +1,8 @@
 part of coordinate_v1_api_client;
 
-class CustomFieldDefResource extends Resource {
+class CustomFieldDefResource_ extends Resource {
 
-  CustomFieldDefResource(Client client) : super(client) {
+  CustomFieldDefResource_(Client client) : super(client) {
   }
 
   /**
@@ -30,7 +30,7 @@ class CustomFieldDefResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -43,9 +43,9 @@ class CustomFieldDefResource extends Resource {
   }
 }
 
-class JobsResource extends Resource {
+class JobsResource_ extends Resource {
 
-  JobsResource(Client client) : super(client) {
+  JobsResource_(Client client) : super(client) {
   }
 
   /**
@@ -77,7 +77,7 @@ class JobsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -147,7 +147,7 @@ class JobsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -193,7 +193,7 @@ class JobsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -275,7 +275,7 @@ class JobsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -357,7 +357,7 @@ class JobsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -370,9 +370,9 @@ class JobsResource extends Resource {
   }
 }
 
-class LocationResource extends Resource {
+class LocationResource_ extends Resource {
 
-  LocationResource(Client client) : super(client) {
+  LocationResource_(Client client) : super(client) {
   }
 
   /**
@@ -414,7 +414,7 @@ class LocationResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -427,9 +427,9 @@ class LocationResource extends Resource {
   }
 }
 
-class ScheduleResource extends Resource {
+class ScheduleResource_ extends Resource {
 
-  ScheduleResource(Client client) : super(client) {
+  ScheduleResource_(Client client) : super(client) {
   }
 
   /**
@@ -461,7 +461,7 @@ class ScheduleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -513,7 +513,7 @@ class ScheduleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -565,7 +565,7 @@ class ScheduleResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -578,9 +578,9 @@ class ScheduleResource extends Resource {
   }
 }
 
-class WorkerResource extends Resource {
+class WorkerResource_ extends Resource {
 
-  WorkerResource(Client client) : super(client) {
+  WorkerResource_(Client client) : super(client) {
   }
 
   /**
@@ -608,7 +608,7 @@ class WorkerResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

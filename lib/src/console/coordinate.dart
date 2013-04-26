@@ -4,16 +4,16 @@ part of coordinate_v1_api_console;
 /** Lets you view and manage jobs in a Coordinate team. */
 class Coordinate extends ConsoleClient {
 
-  CustomFieldDefResource _customFieldDef;
-  CustomFieldDefResource get customFieldDef => _customFieldDef;
-  JobsResource _jobs;
-  JobsResource get jobs => _jobs;
-  LocationResource _location;
-  LocationResource get location => _location;
-  ScheduleResource _schedule;
-  ScheduleResource get schedule => _schedule;
-  WorkerResource _worker;
-  WorkerResource get worker => _worker;
+  CustomFieldDefResource_ _customFieldDef;
+  CustomFieldDefResource_ get customFieldDef => _customFieldDef;
+  JobsResource_ _jobs;
+  JobsResource_ get jobs => _jobs;
+  LocationResource_ _location;
+  LocationResource_ get location => _location;
+  ScheduleResource_ _schedule;
+  ScheduleResource_ get schedule => _schedule;
+  WorkerResource_ _worker;
+  WorkerResource_ get worker => _worker;
 
   /** OAuth Scope2: View and manage your Google Maps Coordinate jobs */
   static const core.String COORDINATE_SCOPE = "https://www.googleapis.com/auth/coordinate";
@@ -73,10 +73,10 @@ class Coordinate extends ConsoleClient {
   Coordinate([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/coordinate/v1/teams/";
     rootUrl = "https://www.googleapis.com:443/";
-    _customFieldDef = new CustomFieldDefResource(this);
-    _jobs = new JobsResource(this);
-    _location = new LocationResource(this);
-    _schedule = new ScheduleResource(this);
-    _worker = new WorkerResource(this);
+    _customFieldDef = new CustomFieldDefResource_(this);
+    _jobs = new JobsResource_(this);
+    _location = new LocationResource_(this);
+    _schedule = new ScheduleResource_(this);
+    _worker = new WorkerResource_(this);
   }
 }
