@@ -72,7 +72,7 @@ class Coordinate extends ConsoleClient {
 
   Coordinate([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/coordinate/v1/teams/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _customFieldDef = new CustomFieldDefResource_(this);
     _jobs = new JobsResource_(this);
     _location = new LocationResource_(this);

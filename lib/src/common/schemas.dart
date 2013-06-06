@@ -4,7 +4,7 @@ part of coordinate_v1_api_client;
 class CustomField {
 
   /** Custom field id. */
-  core.String customFieldId;
+  core.int customFieldId;
 
   /** Identifies this object as a custom field. */
   core.String kind;
@@ -54,7 +54,7 @@ class CustomFieldDef {
   core.bool enabled;
 
   /** Custom field id. */
-  core.String id;
+  core.int id;
 
   /** Identifies this object as a custom field definition. */
   core.String kind;
@@ -606,7 +606,7 @@ class LocationListResponse {
 class LocationRecord {
 
   /** The collection time in milliseconds since the epoch. */
-  core.String collectionTime;
+  core.int collectionTime;
 
   /** The location accuracy in meters. This is the radius of a 95% confidence interval around the location measurement. */
   core.num confidenceRadius;

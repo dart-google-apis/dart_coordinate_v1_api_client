@@ -72,7 +72,7 @@ class Coordinate extends BrowserClient {
 
   Coordinate([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/coordinate/v1/teams/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _customFieldDef = new CustomFieldDefResource_(this);
     _jobs = new JobsResource_(this);
     _location = new LocationResource_(this);
