@@ -15,7 +15,11 @@ class CustomField {
   /** Create new CustomField from JSON data */
   CustomField.fromJson(core.Map json) {
     if (json.containsKey("customFieldId")) {
-      customFieldId = json["customFieldId"];
+      if(json["customFieldId"] is core.String){
+        customFieldId = core.int.parse(json["customFieldId"]);
+      }else{
+        customFieldId = json["customFieldId"];
+      }
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -74,7 +78,11 @@ class CustomFieldDef {
       enabled = json["enabled"];
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -623,7 +631,11 @@ class LocationRecord {
   /** Create new LocationRecord from JSON data */
   LocationRecord.fromJson(core.Map json) {
     if (json.containsKey("collectionTime")) {
-      collectionTime = json["collectionTime"];
+      if(json["collectionTime"] is core.String){
+        collectionTime = core.int.parse(json["collectionTime"]);
+      }else{
+        collectionTime = json["collectionTime"];
+      }
     }
     if (json.containsKey("confidenceRadius")) {
       confidenceRadius = json["confidenceRadius"];
@@ -673,6 +685,9 @@ class Schedule {
   /** Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true. */
   core.bool allDay;
 
+  /** Job duration in milliseconds. */
+  core.String duration;
+
   /** Scheduled end time in milliseconds since epoch. */
   core.String endTime;
 
@@ -686,6 +701,9 @@ class Schedule {
   Schedule.fromJson(core.Map json) {
     if (json.containsKey("allDay")) {
       allDay = json["allDay"];
+    }
+    if (json.containsKey("duration")) {
+      duration = json["duration"];
     }
     if (json.containsKey("endTime")) {
       endTime = json["endTime"];
@@ -704,6 +722,9 @@ class Schedule {
 
     if (allDay != null) {
       output["allDay"] = allDay;
+    }
+    if (duration != null) {
+      output["duration"] = duration;
     }
     if (endTime != null) {
       output["endTime"] = endTime;

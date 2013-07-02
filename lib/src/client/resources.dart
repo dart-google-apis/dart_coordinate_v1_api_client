@@ -13,7 +13,6 @@ class CustomFieldDefResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CustomFieldDefListResponse> list(core.String teamId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/custom_fields";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -30,16 +29,13 @@ class CustomFieldDefResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CustomFieldDefListResponse.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CustomFieldDefListResponse.fromJson(data));
   }
 }
 
@@ -58,7 +54,6 @@ class JobsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Job> get(core.String teamId, core.String jobId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -77,16 +72,13 @@ class JobsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Job.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Job.fromJson(data));
   }
 
   /**
@@ -117,7 +109,6 @@ class JobsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Job> insert(Job request, core.String teamId, core.String address, core.num lat, core.num lng, core.String title, {core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.String note, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/jobs";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -147,16 +138,13 @@ class JobsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Job.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Job.fromJson(data));
   }
 
   /**
@@ -173,7 +161,6 @@ class JobsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<JobListResponse> list(core.String teamId, {core.int maxResults, core.String minModifiedTimestampMs, core.String pageToken, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/jobs";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -193,16 +180,13 @@ class JobsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new JobListResponse.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new JobListResponse.fromJson(data));
   }
 
   /**
@@ -243,7 +227,6 @@ class JobsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Job> patch(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -275,16 +258,13 @@ class JobsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Job.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Job.fromJson(data));
   }
 
   /**
@@ -325,7 +305,6 @@ class JobsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Job> update(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -357,16 +336,13 @@ class JobsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Job.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Job.fromJson(data));
   }
 }
 
@@ -391,7 +367,6 @@ class LocationResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<LocationListResponse> list(core.String teamId, core.String workerEmail, core.String startTimestampMs, {core.int maxResults, core.String pageToken, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/workers/{workerEmail}/locations";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -414,16 +389,13 @@ class LocationResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new LocationListResponse.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new LocationListResponse.fromJson(data));
   }
 }
 
@@ -442,7 +414,6 @@ class ScheduleResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Schedule> get(core.String teamId, core.String jobId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/jobs/{jobId}/schedule";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -461,16 +432,13 @@ class ScheduleResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Schedule.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Schedule.fromJson(data));
   }
 
   /**
@@ -484,20 +452,22 @@ class ScheduleResource_ extends Resource {
    *
    * [allDay] - Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.
    *
+   * [duration] - Job duration in milliseconds.
+   *
    * [endTime] - Scheduled end time in milliseconds since epoch.
    *
    * [startTime] - Scheduled start time in milliseconds since epoch.
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Schedule> patch(Schedule request, core.String teamId, core.String jobId, {core.bool allDay, core.String endTime, core.String startTime, core.Map optParams}) {
-    var completer = new async.Completer();
+  async.Future<Schedule> patch(Schedule request, core.String teamId, core.String jobId, {core.bool allDay, core.String duration, core.String endTime, core.String startTime, core.Map optParams}) {
     var url = "{teamId}/jobs/{jobId}/schedule";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
 
     var paramErrors = new core.List();
     if (allDay != null) queryParams["allDay"] = allDay;
+    if (duration != null) queryParams["duration"] = duration;
     if (endTime != null) queryParams["endTime"] = endTime;
     if (jobId == null) paramErrors.add("jobId is required");
     if (jobId != null) urlParams["jobId"] = jobId;
@@ -513,16 +483,13 @@ class ScheduleResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Schedule.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Schedule.fromJson(data));
   }
 
   /**
@@ -536,20 +503,22 @@ class ScheduleResource_ extends Resource {
    *
    * [allDay] - Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.
    *
+   * [duration] - Job duration in milliseconds.
+   *
    * [endTime] - Scheduled end time in milliseconds since epoch.
    *
    * [startTime] - Scheduled start time in milliseconds since epoch.
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Schedule> update(Schedule request, core.String teamId, core.String jobId, {core.bool allDay, core.String endTime, core.String startTime, core.Map optParams}) {
-    var completer = new async.Completer();
+  async.Future<Schedule> update(Schedule request, core.String teamId, core.String jobId, {core.bool allDay, core.String duration, core.String endTime, core.String startTime, core.Map optParams}) {
     var url = "{teamId}/jobs/{jobId}/schedule";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
 
     var paramErrors = new core.List();
     if (allDay != null) queryParams["allDay"] = allDay;
+    if (duration != null) queryParams["duration"] = duration;
     if (endTime != null) queryParams["endTime"] = endTime;
     if (jobId == null) paramErrors.add("jobId is required");
     if (jobId != null) urlParams["jobId"] = jobId;
@@ -565,16 +534,13 @@ class ScheduleResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Schedule.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Schedule.fromJson(data));
   }
 }
 
@@ -591,7 +557,6 @@ class WorkerResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<WorkerListResponse> list(core.String teamId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{teamId}/workers";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -608,16 +573,13 @@ class WorkerResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new WorkerListResponse.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new WorkerListResponse.fromJson(data));
   }
 }
 
