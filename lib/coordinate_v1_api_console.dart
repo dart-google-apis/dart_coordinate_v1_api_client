@@ -1,14 +1,21 @@
-library coordinate_v1_api_console;
+library coordinate_v1_api.console;
 
-import "coordinate_v1_api_client.dart";
-export "coordinate_v1_api_client.dart";
-
-import "dart:core" as core;
-import "dart:io" as io;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:http/http.dart" as http;
 import "package:google_oauth2_client/google_oauth2_console.dart" as oauth2;
 
-part "src/console/console_client.dart";
-part "src/console/coordinate.dart";
+import 'package:google_coordinate_v1_api/src/cloud_api_console.dart';
+
+import "package:google_coordinate_v1_api/coordinate_v1_api_client.dart";
+
+/** Lets you view and manage jobs in a Coordinate team. */
+class Coordinate extends Client with ConsoleClient {
+
+  /** OAuth Scope2: View and manage your Google Maps Coordinate jobs */
+  static const String COORDINATE_SCOPE = "https://www.googleapis.com/auth/coordinate";
+
+  /** OAuth Scope2: View your Google Coordinate jobs */
+  static const String COORDINATE_READONLY_SCOPE = "https://www.googleapis.com/auth/coordinate.readonly";
+
+  final oauth2.OAuth2Console auth;
+
+  Coordinate([oauth2.OAuth2Console this.auth]);
+}

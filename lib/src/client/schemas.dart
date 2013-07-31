@@ -1,4 +1,4 @@
-part of coordinate_v1_api_client;
+part of coordinate_v1_api;
 
 /** Custom field. */
 class CustomField {
@@ -15,11 +15,7 @@ class CustomField {
   /** Create new CustomField from JSON data */
   CustomField.fromJson(core.Map json) {
     if (json.containsKey("customFieldId")) {
-      if(json["customFieldId"] is core.String){
-        customFieldId = core.int.parse(json["customFieldId"]);
-      }else{
-        customFieldId = json["customFieldId"];
-      }
+      customFieldId = (json["customFieldId"] is core.String) ? core.int.parse(json["customFieldId"]) : json["customFieldId"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -78,11 +74,7 @@ class CustomFieldDef {
       enabled = json["enabled"];
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -141,10 +133,7 @@ class CustomFieldDefListResponse {
   /** Create new CustomFieldDefListResponse from JSON data */
   CustomFieldDefListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CustomFieldDef.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CustomFieldDef.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -156,10 +145,7 @@ class CustomFieldDefListResponse {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -185,10 +171,7 @@ class CustomFields {
   /** Create new CustomFields from JSON data */
   CustomFields.fromJson(core.Map json) {
     if (json.containsKey("customField")) {
-      customField = [];
-      json["customField"].forEach((item) {
-        customField.add(new CustomField.fromJson(item));
-      });
+      customField = json["customField"].map((customFieldItem) => new CustomField.fromJson(customFieldItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -200,10 +183,7 @@ class CustomFields {
     var output = new core.Map();
 
     if (customField != null) {
-      output["customField"] = new core.List();
-      customField.forEach((item) {
-        output["customField"].add(item.toJson());
-      });
+      output["customField"] = customField.map((customFieldItem) => customFieldItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -238,10 +218,7 @@ class Job {
       id = json["id"];
     }
     if (json.containsKey("jobChange")) {
-      jobChange = [];
-      json["jobChange"].forEach((item) {
-        jobChange.add(new JobChange.fromJson(item));
-      });
+      jobChange = json["jobChange"].map((jobChangeItem) => new JobChange.fromJson(jobChangeItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -259,10 +236,7 @@ class Job {
       output["id"] = id;
     }
     if (jobChange != null) {
-      output["jobChange"] = new core.List();
-      jobChange.forEach((item) {
-        output["jobChange"].add(item.toJson());
-      });
+      output["jobChange"] = jobChange.map((jobChangeItem) => jobChangeItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -341,10 +315,7 @@ class JobListResponse {
   /** Create new JobListResponse from JSON data */
   JobListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Job.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Job.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -359,10 +330,7 @@ class JobListResponse {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -430,10 +398,7 @@ class JobState {
       location = new Location.fromJson(json["location"]);
     }
     if (json.containsKey("note")) {
-      note = [];
-      json["note"].forEach((item) {
-        note.add(item);
-      });
+      note = json["note"].toList();
     }
     if (json.containsKey("progress")) {
       progress = json["progress"];
@@ -466,10 +431,7 @@ class JobState {
       output["location"] = location.toJson();
     }
     if (note != null) {
-      output["note"] = new core.List();
-      note.forEach((item) {
-        output["note"].add(item);
-      });
+      output["note"] = note.toList();
     }
     if (progress != null) {
       output["progress"] = progress;
@@ -504,10 +466,7 @@ class Location {
   /** Create new Location from JSON data */
   Location.fromJson(core.Map json) {
     if (json.containsKey("addressLine")) {
-      addressLine = [];
-      json["addressLine"].forEach((item) {
-        addressLine.add(item);
-      });
+      addressLine = json["addressLine"].toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -525,10 +484,7 @@ class Location {
     var output = new core.Map();
 
     if (addressLine != null) {
-      output["addressLine"] = new core.List();
-      addressLine.forEach((item) {
-        output["addressLine"].add(item);
-      });
+      output["addressLine"] = addressLine.toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -566,10 +522,7 @@ class LocationListResponse {
   /** Create new LocationListResponse from JSON data */
   LocationListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new LocationRecord.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new LocationRecord.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -587,10 +540,7 @@ class LocationListResponse {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -631,11 +581,7 @@ class LocationRecord {
   /** Create new LocationRecord from JSON data */
   LocationRecord.fromJson(core.Map json) {
     if (json.containsKey("collectionTime")) {
-      if(json["collectionTime"] is core.String){
-        collectionTime = core.int.parse(json["collectionTime"]);
-      }else{
-        collectionTime = json["collectionTime"];
-      }
+      collectionTime = (json["collectionTime"] is core.String) ? core.int.parse(json["collectionTime"]) : json["collectionTime"];
     }
     if (json.containsKey("confidenceRadius")) {
       confidenceRadius = json["confidenceRadius"];
@@ -841,10 +787,7 @@ class WorkerListResponse {
   /** Create new WorkerListResponse from JSON data */
   WorkerListResponse.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Worker.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Worker.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -856,10 +799,7 @@ class WorkerListResponse {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -873,3 +813,16 @@ class WorkerListResponse {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

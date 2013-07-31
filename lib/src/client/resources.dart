@@ -1,9 +1,11 @@
-part of coordinate_v1_api_client;
+part of coordinate_v1_api;
 
-class CustomFieldDefResource_ extends Resource {
+class CustomFieldDefResource_ {
 
-  CustomFieldDefResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CustomFieldDefResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves a list of custom field definitions for a team.
@@ -39,10 +41,12 @@ class CustomFieldDefResource_ extends Resource {
   }
 }
 
-class JobsResource_ extends Resource {
+class JobsResource_ {
 
-  JobsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  JobsResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves a job, including all the changes made to the job.
@@ -99,6 +103,7 @@ class JobsResource_ extends Resource {
    * [assignee] - Assignee email address, or empty string to unassign.
    *
    * [customField] - Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'
+   *   Repeated values: allowed
    *
    * [customerName] - Customer name
    *
@@ -108,7 +113,7 @@ class JobsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Job> insert(Job request, core.String teamId, core.String address, core.num lat, core.num lng, core.String title, {core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.String note, core.Map optParams}) {
+  async.Future<Job> insert(Job request, core.String teamId, core.String address, core.num lat, core.num lng, core.String title, {core.String assignee, core.List<core.String> customField, core.String customerName, core.String customerPhoneNumber, core.String note, core.Map optParams}) {
     var url = "{teamId}/jobs";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -203,6 +208,7 @@ class JobsResource_ extends Resource {
    * [assignee] - Assignee email address, or empty string to unassign.
    *
    * [customField] - Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'
+   *   Repeated values: allowed
    *
    * [customerName] - Customer name
    *
@@ -226,7 +232,7 @@ class JobsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Job> patch(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
+  async.Future<Job> patch(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.List<core.String> customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
     var url = "{teamId}/jobs/{jobId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -281,6 +287,7 @@ class JobsResource_ extends Resource {
    * [assignee] - Assignee email address, or empty string to unassign.
    *
    * [customField] - Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'
+   *   Repeated values: allowed
    *
    * [customerName] - Customer name
    *
@@ -304,7 +311,7 @@ class JobsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Job> update(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.String customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
+  async.Future<Job> update(Job request, core.String teamId, core.String jobId, {core.String address, core.String assignee, core.List<core.String> customField, core.String customerName, core.String customerPhoneNumber, core.num lat, core.num lng, core.String note, core.String progress, core.String title, core.Map optParams}) {
     var url = "{teamId}/jobs/{jobId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -346,10 +353,12 @@ class JobsResource_ extends Resource {
   }
 }
 
-class LocationResource_ extends Resource {
+class LocationResource_ {
 
-  LocationResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  LocationResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves a list of locations for a worker.
@@ -399,10 +408,12 @@ class LocationResource_ extends Resource {
   }
 }
 
-class ScheduleResource_ extends Resource {
+class ScheduleResource_ {
 
-  ScheduleResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ScheduleResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves the schedule for a job.
@@ -544,10 +555,12 @@ class ScheduleResource_ extends Resource {
   }
 }
 
-class WorkerResource_ extends Resource {
+class WorkerResource_ {
 
-  WorkerResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  WorkerResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves a list of workers in a team.
