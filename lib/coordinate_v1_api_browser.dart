@@ -2,7 +2,7 @@ library coordinate_v1_api.browser;
 
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-import 'package:google_coordinate_v1_api/src/cloud_api_browser.dart';
+import 'package:google_coordinate_v1_api/src/browser_client.dart';
 import "package:google_coordinate_v1_api/coordinate_v1_api_client.dart";
 
 /** Lets you view and manage jobs in a Coordinate team. */

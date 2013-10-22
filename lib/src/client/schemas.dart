@@ -43,7 +43,7 @@ class CustomField {
   }
 
   /** Return String representation of CustomField */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -117,7 +117,7 @@ class CustomFieldDef {
   }
 
   /** Return String representation of CustomFieldDef */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -155,7 +155,7 @@ class CustomFieldDefListResponse {
   }
 
   /** Return String representation of CustomFieldDefListResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -193,7 +193,7 @@ class CustomFields {
   }
 
   /** Return String representation of CustomFields */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -249,7 +249,7 @@ class Job {
   }
 
   /** Return String representation of Job */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -296,7 +296,7 @@ class JobChange {
   }
 
   /** Return String representation of JobChange */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -343,7 +343,7 @@ class JobListResponse {
   }
 
   /** Return String representation of JobListResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -444,7 +444,7 @@ class JobState {
   }
 
   /** Return String representation of JobState */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -500,7 +500,7 @@ class Location {
   }
 
   /** Return String representation of Location */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -556,7 +556,7 @@ class LocationListResponse {
   }
 
   /** Return String representation of LocationListResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -621,7 +621,7 @@ class LocationRecord {
   }
 
   /** Return String representation of LocationRecord */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -686,7 +686,7 @@ class Schedule {
   }
 
   /** Return String representation of Schedule */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -733,7 +733,7 @@ class TokenPagination {
   }
 
   /** Return String representation of TokenPagination */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -771,7 +771,7 @@ class Worker {
   }
 
   /** Return String representation of Worker */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -809,7 +809,7 @@ class WorkerListResponse {
   }
 
   /** Return String representation of WorkerListResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
