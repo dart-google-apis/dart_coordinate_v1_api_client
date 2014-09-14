@@ -7,6 +7,7 @@ import 'package:google_coordinate_v1_api/src/console_client.dart';
 import "package:google_coordinate_v1_api/coordinate_v1_api_client.dart";
 
 /** Lets you view and manage jobs in a Coordinate team. */
+@deprecated
 class Coordinate extends Client with ConsoleClient {
 
   /** OAuth Scope2: View and manage your Google Maps Coordinate jobs */
